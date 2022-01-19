@@ -6,7 +6,6 @@ import (
 )
 
 func ForeignerRegistrationNumber(regNum string) bool {
-
 	var arrCheckNum = []int{2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5}
 
 	sum := 0
@@ -17,7 +16,6 @@ func ForeignerRegistrationNumber(regNum string) bool {
 		}
 
 		lastValue, _ := strconv.Atoi(string(regNum[12]))
-		fmt.Println(lastValue)
 		seventh, _ := strconv.Atoi(string(regNum[6]))
 		verificationCode := 13 - (sum % 11)
 
@@ -25,7 +23,6 @@ func ForeignerRegistrationNumber(regNum string) bool {
 			verificationCode = verificationCode - 10
 		}
 
-		fmt.Println(verificationCode)
 		if lastValue == verificationCode && (seventh == 5 || seventh == 6 || seventh == 7 || seventh == 8) {
 			return true
 		} else {

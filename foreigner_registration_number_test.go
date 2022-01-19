@@ -9,8 +9,7 @@ func TestValidateForeignerRegistrationNumber_Ok(t *testing.T) {
 	//given
 	a := "9901015020063"
 	//when
-	actual :=  ForeignerRegistrationNumber(a)
+	actual := ForeignerRegistrationNumber(a)
 	//then
 	assert.Equal(t, true, actual)
 }
-

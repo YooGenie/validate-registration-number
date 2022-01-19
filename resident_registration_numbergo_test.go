@@ -1,37 +1,35 @@
 package registration_number
 
 import (
-"github.com/stretchr/testify/assert"
-"testing"
+	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
-
-func TestValidateRegistrationNumber_13자리아닌경우(t *testing.T) {
+func TestValidateResidentRegistrationNumber_13자리아닌경우(t *testing.T) {
 	//given
-	a := "123456789"
+	a := "123456789011"
 	//when
-	actual :=  RegistrationNumber(a)
+	actual := ResidentRegistrationNumber(a)
 	//then
 	assert.Equal(t, false, actual)
-	assert.Equal(t, len(a), 9)
+	assert.Equal(t, len(a), 12)
+
 }
 
-
-func TestValidateRegistrationNumber_유효한번호아닌경우(t *testing.T) {
+func TestValidateResidentRegistrationNumber_유효한번호아닌경우(t *testing.T) {
 	//given
-	a := "1234567890"
+	a := "0001014000000"
 	//when
-	actual :=  RegistrationNumber(a)
+	actual := ResidentRegistrationNumber(a)
 	//then
 	assert.Equal(t, false, actual)
 }
 
-func TestValidateRegistrationNumber_Ok(t *testing.T) {
+func TestValidateResidentRegistrationNumber_Ok(t *testing.T) {
 	//given
-	a := "9901015020063"
+	a := ""
 	//when
-	actual :=  RegistrationNumber(a)
+	actual := ResidentRegistrationNumber(a)
 	//then
 	assert.Equal(t, true, actual)
 }
-

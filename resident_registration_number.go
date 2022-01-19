@@ -6,7 +6,7 @@ import (
 )
 
 //주민등록번호
-func RegistrationNumber(regNum string) bool {
+func ResidentRegistrationNumber(regNum string) bool {
 
 	var arrCheckNum = []int{2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5}
 
@@ -18,20 +18,21 @@ func RegistrationNumber(regNum string) bool {
 		}
 
 		lastValue, _ := strconv.Atoi(string(regNum[12]))
+		seventh, _ := strconv.Atoi(string(regNum[6]))
 		verificationCode := 11 - (sum % 11)
 
 		if verificationCode >= 10 && verificationCode <= 11 {
 			verificationCode = verificationCode - 10
 		}
 
-		if lastValue == verificationCode {
+		if lastValue == verificationCode && (seventh == 1 || seventh == 2 || seventh == 3 || seventh == 4) {
 			return true
 		} else {
 			fmt.Println("주민등록번호를 제대로 입력해주세요")
 			return false
 		}
 	} else {
-		fmt.Println("주민등록번호를 제대로 입력해주세요")
+		fmt.Println("주민등록번호를 13자리를 입력하세요")
 		return false
 	}
 
