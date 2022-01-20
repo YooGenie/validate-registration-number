@@ -1,4 +1,4 @@
-module github.com/YooGenie/registration-number
+module github.com/YooGenie/validate-registration-number
 
 go 1.16
 
