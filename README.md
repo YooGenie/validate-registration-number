@@ -29,3 +29,12 @@ func RegistrationNumber(nationalityType string, regNum string) bool {
     return bool
 }
 ```
+nationalityType 종류 : NATIVE, FOREIGN
+
+
+# 사용법
+```
+	registration_number.ForeignerRegistrationNumber(regNum)
+	registration_number.ResidentRegistrationNumber(regNum)
+	registration_number.RegistrationNumber(nationalityType,regNum)
+```
