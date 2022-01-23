@@ -38,3 +38,6 @@ nationalityType 종류 : NATIVE, FOREIGN
 	registration_number.ResidentRegistrationNumber(regNum)
 	registration_number.RegistrationNumber(nationalityType,regNum)
 ```
+
+# UPDATE
+2022-01-23 v0.0.1 #4 주민번호과 외국인번호에 하이픈있으면 제거하기
