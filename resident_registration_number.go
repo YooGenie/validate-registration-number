@@ -3,10 +3,12 @@ package registration_number
 import (
 	"fmt"
 	"strconv"
+	"strings"
 )
 
 //주민등록번호
 func ResidentRegistrationNumber(regNum string) bool {
+	regNum = strings.Replace(regNum, "-", "", 1)
 
 	var arrCheckNum = []int{2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5}
 
