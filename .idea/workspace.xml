@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f07fdc65-8137-454a-993c-6a3db24d4c20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f07fdc65-8137-454a-993c-6a3db24d4c20" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,76 +38,74 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../validate-check" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\bsit\go\src\Menu\validate-registration-number" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestValidateResidentRegistrationNumber_유효한번호아닌경우 in github.com/YooGenie/registration-number">
-    <configuration name="TestValidateForeignerRegistrationNumber_Ok in github.com/YooGenie/registration-number" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestValidateRegistrationNumber_13자리수아닌경우 in github.com/YooGenie/validate-registration-number">
+    <configuration name="TestValidateRegistrationNumber_외국인인경우유효하지않는경우 in github.com/YooGenie/validate-registration-number" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="validate-registration-number" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/YooGenie/registration-number" />
+      <package value="github.com/YooGenie/validate-registration-number" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestValidateForeignerRegistrationNumber_Ok\E$" />
+      <pattern value="^\QTestValidateRegistrationNumber_외국인인경우유효하지않는경우\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestValidateRegistrationNumber_Ok in github.com/YooGenie/registration-number" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestValidateRegistrationNumber_내국인인경우유효하지않는경우 in github.com/YooGenie/validate-registration-number" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="validate-registration-number" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/YooGenie/registration-number" />
+      <package value="github.com/YooGenie/validate-registration-number" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestValidateRegistrationNumber_Ok\E$" />
+      <pattern value="^\QTestValidateRegistrationNumber_내국인인경우유효하지않는경우\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestValidateResidentRegistrationNumber_유효한번호아닌경우 in github.com/YooGenie/registration-number" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestValidateRegistrationNumber_국적이유효하지않는경우 in github.com/YooGenie/validate-registration-number" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="validate-registration-number" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/YooGenie/registration-number" />
+      <package value="github.com/YooGenie/validate-registration-number" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestValidateResidentRegistrationNumber_유효한번호아닌경우\E$" />
+      <pattern value="^\QTestValidateRegistrationNumber_국적이유효하지않는경우\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestValidateResidentRegistrationNumber_13자리아닌경우 in github.com/YooGenie/registration-number" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestValidateRegistrationNumber_13자리수아닌경우 in github.com/YooGenie/validate-registration-number" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="validate-registration-number" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/YooGenie/registration-number" />
+      <package value="github.com/YooGenie/validate-registration-number" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestValidateResidentRegistrationNumber_13자리아닌경우\E$" />
+      <pattern value="^\QTestValidateRegistrationNumber_13자리수아닌경우\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestValidateResidentRegistrationNumber_Ok in github.com/YooGenie/registration-number" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestValidateRegistrationNumber_내국인인경우Ok in github.com/YooGenie/validate-registration-number" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="validate-registration-number" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/YooGenie/registration-number" />
+      <package value="github.com/YooGenie/validate-registration-number" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestValidateResidentRegistrationNumber_Ok\E$" />
+      <pattern value="^\QTestValidateRegistrationNumber_내국인인경우Ok\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestValidateResidentRegistrationNumber_유효한번호아닌경우 in github.com/YooGenie/registration-number" />
-        <item itemvalue="Go Test.TestValidateResidentRegistrationNumber_13자리아닌경우 in github.com/YooGenie/registration-number" />
-        <item itemvalue="Go Test.TestValidateResidentRegistrationNumber_Ok in github.com/YooGenie/registration-number" />
-        <item itemvalue="Go Test.TestValidateForeignerRegistrationNumber_Ok in github.com/YooGenie/registration-number" />
-        <item itemvalue="Go Test.TestValidateRegistrationNumber_Ok in github.com/YooGenie/registration-number" />
+        <item itemvalue="Go Test.TestValidateRegistrationNumber_외국인인경우유효하지않는경우 in github.com/YooGenie/validate-registration-number" />
+        <item itemvalue="Go Test.TestValidateRegistrationNumber_내국인인경우Ok in github.com/YooGenie/validate-registration-number" />
+        <item itemvalue="Go Test.TestValidateRegistrationNumber_13자리수아닌경우 in github.com/YooGenie/validate-registration-number" />
       </list>
     </recent_temporary>
   </component>
