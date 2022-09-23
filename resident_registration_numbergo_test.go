@@ -17,7 +17,7 @@ func TestValidateResidentRegistrationNumber_Ok(t *testing.T) {
 
 func TestValidateResidentRegistrationNumber_하이픈있는경우(t *testing.T) {
 	//given
-	a := "-"
+	a := ""
 	//when
 	actual := ResidentRegistrationNumber(a)
 	//then
@@ -38,6 +38,24 @@ func TestValidateResidentRegistrationNumber_13자리아닌경우(t *testing.T) {
 func TestValidateResidentRegistrationNumber_유효한번호아닌경우(t *testing.T) {
 	//given
 	a := "0001014000000"
+	//when
+	actual := ResidentRegistrationNumber(a)
+	//then
+	assert.Equal(t, false, actual)
+}
+
+func TestValidateResidentRegistrationNumber_2020년10월이후_OK(t *testing.T) {
+	//given
+	a := "2010014000000"
+	//when
+	actual := ResidentRegistrationNumber(a)
+	//then
+	assert.Equal(t, true, actual)
+}
+
+func TestValidateResidentRegistrationNumber_2020년10월이후_NO(t *testing.T) {
+	//given
+	a := "2010012000000"
 	//when
 	actual := ResidentRegistrationNumber(a)
 	//then

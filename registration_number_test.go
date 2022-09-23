@@ -8,7 +8,7 @@ import (
 //테스트할 때 유효한 등록번호는 넣어서 테스트하기
 func TestValidateRegistrationNumber_외국인인경우Ok(t *testing.T) {
 	//given
-	regNum := "9901015"
+	regNum := "990101"
 	nationalityType := "FOREIGN"
 	//when
 	actual := RegistrationNumber(nationalityType, regNum)
@@ -68,10 +68,11 @@ func TestValidateRegistrationNumber_내국인인경우유효하지않는경우(t
 
 func TestValidateRegistrationNumber_국적이유효하지않는경우(t *testing.T) {
 	//given
-	regNum := "9901015"
+	regNum := ""
 	nationalityType := "KOREA"
 	//when
 	actual := RegistrationNumber(nationalityType, regNum)
 	//then
 	assert.Equal(t, false, actual)
 }
+
