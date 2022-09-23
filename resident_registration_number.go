@@ -1,7 +1,6 @@
 package registration_number
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -9,6 +8,14 @@ import (
 //주민등록번호
 func ResidentRegistrationNumber(regNum string) bool {
 	regNum = strings.Replace(regNum, "-", "", 1)
+	if len(regNum) != 13 {
+		return false
+	}
+
+	seventhDigit := regNum[6:7] == "3" || regNum[6:7] == "4"
+	if regNum[0:4] >= "2010" && seventhDigit {
+		return true
+	}
 
 	var arrCheckNum = []int{2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5}
 
@@ -30,12 +37,8 @@ func ResidentRegistrationNumber(regNum string) bool {
 		if lastValue == verificationCode && (seventh == 1 || seventh == 2 || seventh == 3 || seventh == 4) {
 			return true
 		} else {
-			fmt.Println("주민등록번호를 제대로 입력해주세요")
 			return false
 		}
-	} else {
-		fmt.Println("주민등록번호를 13자리를 입력하세요")
-		return false
 	}
-
+	return false
 }
