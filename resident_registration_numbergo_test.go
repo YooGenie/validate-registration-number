@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-//테스트할 때 유효한 등록번호는 넣어서 테스트하기
+// 테스트할 때 유효한 등록번호는 넣어서 테스트하기
 func TestValidateResidentRegistrationNumber_Ok(t *testing.T) {
 	//given
 	a := ""
@@ -56,6 +56,24 @@ func TestValidateResidentRegistrationNumber_2020년10월이후_OK(t *testing.T) 
 func TestValidateResidentRegistrationNumber_2020년10월이후_NO(t *testing.T) {
 	//given
 	a := "2010012000000"
+	//when
+	actual := ResidentRegistrationNumber(a)
+	//then
+	assert.Equal(t, false, actual)
+}
+
+func TestValidateResidentRegistrationNumber_내국인_5로_시작(t *testing.T) {
+	//given
+	a := "9101015020063"
+	//when
+	actual := ResidentRegistrationNumber(a)
+	//then
+	assert.Equal(t, false, actual)
+}
+
+func TestValidateResidentRegistrationNumber_내국인_1930년_7번째자리_3으로_했을때(t *testing.T) {
+	//given
+	a := "3007233000000"
 	//when
 	actual := ResidentRegistrationNumber(a)
 	//then
