@@ -3,6 +3,7 @@ package registration_number
 import (
 	"strconv"
 	"strings"
+	"time"
 )
 
 func ForeignerRegistrationNumber(regNum string) bool {
@@ -14,31 +15,29 @@ func ForeignerRegistrationNumber(regNum string) bool {
 		return false
 	}
 
-	seventhDigit := regNum[6:7] == "7" || regNum[6:7] == "8"
-	if regNum[0:4] >= "2010" && seventhDigit {
-		return true
-	}
+	nowDate := time.Now().Format("0601")
 
 	sum := 0
-	if len(regNum) == 13 {
-		for i := 0; i < 12; i++ {
-			r, _ := strconv.Atoi(string(regNum[i]))
-			sum += r * arrCheckNum[i]
+	for i := 0; i < 12; i++ {
+		r, _ := strconv.Atoi(string(regNum[i]))
+		sum += r * arrCheckNum[i]
+	}
+
+	lastValue, _ := strconv.Atoi(string(regNum[12]))
+	verificationCode := 13 - (sum % 11)
+
+	if regNum[6:7] == "5" || regNum[6:7] == "6" || regNum[6:7] == "7" || regNum[6:7] == "8" {
+		seventhDigit := regNum[6:7] == "7" || regNum[6:7] == "8"
+		if regNum[0:4] >= "2010" && regNum[0:4] <= nowDate && (seventhDigit) {
+			return true
 		}
-
-		lastValue, _ := strconv.Atoi(string(regNum[12]))
-		seventh, _ := strconv.Atoi(string(regNum[6]))
-		verificationCode := 13 - (sum % 11)
-
 		if verificationCode >= 10 && verificationCode <= 13 {
 			verificationCode = verificationCode - 10
 		}
-
-		if lastValue == verificationCode && (seventh == 5 || seventh == 6 || seventh == 7 || seventh == 8) {
+		if lastValue == verificationCode {
 			return true
-		} else {
-			return false
 		}
 	}
 	return false
+
 }
