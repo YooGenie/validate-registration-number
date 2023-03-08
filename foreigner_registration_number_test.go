@@ -81,3 +81,25 @@ func TestValidateBusinessNumber_1930_일곱번째_7로_시작(t *testing.T) {
 	assert.Equal(t, false, actual)
 	assert.Equal(t, len(a), 13)
 }
+
+func TestValidateBusinessNumber_앞자리오류(t *testing.T) {
+	//given
+	a := "2323213213231"
+
+	//when
+	actual := ForeignerRegistrationNumber(a)
+	//then
+	assert.Equal(t, false, actual)
+	assert.Equal(t, len(a), 13)
+}
+
+func TestValidateBusinessNumber_한글오류(t *testing.T) {
+	//given
+	a := "9008013sksksk"
+
+	//when
+	actual := ForeignerRegistrationNumber(a)
+	//then
+	assert.Equal(t, false, actual)
+	assert.Equal(t, len(a), 13)
+}
