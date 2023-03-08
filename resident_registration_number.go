@@ -1,6 +1,7 @@
 package registration_number
 
 import (
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -9,6 +10,13 @@ import (
 // 주민등록번호
 func ResidentRegistrationNumber(regNum string) bool {
 	regNum = strings.Replace(regNum, "-", "", 1)
+	r, _ := regexp.Compile("[0-9]{2}[0-1][0-9][0-3][0-9][1-4][0-9]{6}")
+
+	regexpCheck := r.MatchString(regNum)
+
+	if !regexpCheck {
+		return false
+	}
 
 	if len(regNum) != 13 {
 		return false

@@ -64,7 +64,7 @@ func TestValidateResidentRegistrationNumber_2020년10월이후_NO(t *testing.T) 
 
 func TestValidateResidentRegistrationNumber_내국인_5로_시작(t *testing.T) {
 	//given
-	a := "9101015020063"
+	a := "91010150200000"
 	//when
 	actual := ResidentRegistrationNumber(a)
 	//then
@@ -78,4 +78,26 @@ func TestValidateResidentRegistrationNumber_내국인_1930년_7번째자리_3으
 	actual := ResidentRegistrationNumber(a)
 	//then
 	assert.Equal(t, false, actual)
+}
+
+func TestValidateBusinessNumber_내국인_앞자리생년월일잘못했을때(t *testing.T) {
+	//given
+	regNum := "2323213213231"
+
+	//when
+	actual := ResidentRegistrationNumber(regNum)
+	//then
+	assert.Equal(t, false, actual)
+	assert.Equal(t, len(regNum), 13)
+}
+
+func TestValidateBusinessNumber_내국인_한글포함(t *testing.T) {
+	//given
+	regNum := "9008013sksksk"
+
+	//when
+	actual := ResidentRegistrationNumber(regNum)
+	//then
+	assert.Equal(t, false, actual)
+	assert.Equal(t, len(regNum), 13)
 }

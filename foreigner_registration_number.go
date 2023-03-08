@@ -1,6 +1,7 @@
 package registration_number
 
 import (
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -8,6 +9,13 @@ import (
 
 func ForeignerRegistrationNumber(regNum string) bool {
 	regNum = strings.Replace(regNum, "-", "", 1)
+	r, _ := regexp.Compile("[0-9]{2}[0-1][0-9][0-3][0-9][5-8][0-9]{6}")
+
+	regexpCheck := r.MatchString(regNum)
+
+	if !regexpCheck {
+		return false
+	}
 
 	var arrCheckNum = []int{2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5}
 
