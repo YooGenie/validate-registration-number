@@ -25,6 +25,7 @@ func ResidentRegistrationNumber(regNum string) bool {
 	var arrCheckNum = []int{2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5}
 
 	nowDate := time.Now().Format("0601")
+	nowYear := time.Now().Format("2006")
 
 	sum := 0
 	for i := 0; i < 12; i++ {
@@ -37,8 +38,11 @@ func ResidentRegistrationNumber(regNum string) bool {
 
 	if regNum[6:7] == "1" || regNum[6:7] == "2" || regNum[6:7] == "3" || regNum[6:7] == "4" {
 		seventhDigit := regNum[6:7] == "3" || regNum[6:7] == "4"
-		if regNum[0:4] >= "2010" && regNum[0:4] <= nowDate && (seventhDigit) {
+		if regNum[0:4] >= "2010" && regNum[0:4] <= nowDate && "20"+regNum[0:2] <= nowYear && (seventhDigit) {
 			return true
+		}
+		if regNum[0:2] >= nowYear && (seventhDigit) {
+			return false
 		}
 		if verificationCode >= 10 && verificationCode <= 11 {
 			verificationCode = verificationCode - 10
