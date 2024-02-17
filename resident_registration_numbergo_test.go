@@ -101,3 +101,12 @@ func TestValidateBusinessNumber_내국인_한글포함(t *testing.T) {
 	assert.Equal(t, false, actual)
 	assert.Equal(t, len(regNum), 13)
 }
+
+func TestValidateResidentRegistrationNumber_태어나지_않은_사람(t *testing.T) {
+	//given
+	a := "9309053111111"
+	//when
+	actual := ResidentRegistrationNumber(a)
+	//then
+	assert.Equal(t, false, actual)
+}

@@ -35,7 +35,7 @@ func TestValidateForeignerRegistrationNumber_13자리아닌경우(t *testing.T) 
 
 func TestValidateForeignerRegistrationNumber_유효한번호아닌경우(t *testing.T) {
 	//given
-	a := "9901015"
+	a := "9901015222222"
 	//when
 	actual := ForeignerRegistrationNumber(a)
 	//then
@@ -102,4 +102,14 @@ func TestValidateBusinessNumber_한글오류(t *testing.T) {
 	//then
 	assert.Equal(t, false, actual)
 	assert.Equal(t, len(a), 13)
+}
+
+func TestValidateBusinessNumber_태어나지_않은_사람(t *testing.T) {
+	//given
+	a := "9008017234320"
+
+	//when
+	actual := ForeignerRegistrationNumber(a)
+	//then
+	assert.Equal(t, false, actual)
 }

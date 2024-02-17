@@ -24,6 +24,7 @@ func ForeignerRegistrationNumber(regNum string) bool {
 	}
 
 	nowDate := time.Now().Format("0601")
+	nowYear := time.Now().Format("2006")
 
 	sum := 0
 	for i := 0; i < 12; i++ {
@@ -36,8 +37,11 @@ func ForeignerRegistrationNumber(regNum string) bool {
 
 	if regNum[6:7] == "5" || regNum[6:7] == "6" || regNum[6:7] == "7" || regNum[6:7] == "8" {
 		seventhDigit := regNum[6:7] == "7" || regNum[6:7] == "8"
-		if regNum[0:4] >= "2010" && regNum[0:4] <= nowDate && (seventhDigit) {
+		if regNum[0:4] >= "2010" && regNum[0:4] <= nowDate && "20"+regNum[0:2] <= nowYear && (seventhDigit) {
 			return true
+		}
+		if regNum[0:2] >= nowYear && (seventhDigit) {
+			return false
 		}
 		if verificationCode >= 10 && verificationCode <= 13 {
 			verificationCode = verificationCode - 10
